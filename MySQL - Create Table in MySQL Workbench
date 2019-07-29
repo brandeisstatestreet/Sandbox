@@ -1,3 +1,14 @@
+# this is to create 'accounts' table (used in main.py) in mysql so that the sandbox can store user data.  
+USE MyUsers;
+CREATE TABLE IF NOT EXISTS `accounts` (
+	`id` int(11) NOT NULL AUTO_INCREMENT,
+  	`username` varchar(50) NOT NULL,
+  	`password` varchar(255) NOT NULL,
+  	`email` varchar(100) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+
 USE mkt_indicators;
 CREATE TABLE IF NOT EXISTS `indicators` (
 	`id` int(20) NOT NULL AUTO_INCREMENT,
