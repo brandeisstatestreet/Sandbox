@@ -1,0 +1,17 @@
+USE mkt_indicators;
+CREATE TABLE IF NOT EXISTS `indicators` (
+	`id` int(20) NOT NULL AUTO_INCREMENT,
+  	`Country` varchar(50) NOT NULL,
+  	`MarketIndicators` varchar(255) NOT NULL,
+  	`url` varchar(100) NOT NULL,
+    `category` varchar(100) NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `data`(
+	`id` int(20) NOT NULL AUTO_INCREMENT,
+  	`MarketIndicators` int(20) NOT NULL REFERENCES indicators(id),
+  	`date` varchar(255),
+    `Price` varchar(255), 
+    PRIMARY KEY (`id`)
+  );  
